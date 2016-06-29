@@ -13,13 +13,9 @@ angular
         'angularStubApp.init',
         'angularStubApp.translations.init',
         'angularStubApp.header',
-        'angularStubApp.files',
         'angularStubApp.dashboard',
         'angularStubApp.search',
-        
-        'angularStubApp.documents',
         'angularStubApp.administration',
-        'angularStubApp.users',
         'angularStubApp.systemsettings',
         'angularStubApp.common.directives',
         'angularStubApp.common.directives.filter',
@@ -27,31 +23,20 @@ angular
         /*DO NOT REMOVE MODULES PLACEHOLDER!!!*/ //openDesk-modules
         /*LAST*/ 'angularStubApp.translations'])// TRANSLATIONS IS ALWAYS LAST!
     .config(config)
-    .run(function ($rootScope, $state, $mdDialog, authService, sessionService, APP_CONFIG) {
+    .run(function ($rootScope, $state, $mdDialog, APP_CONFIG) {
         angular.element(window.document)[0].title = APP_CONFIG.appName;
         $rootScope.appName = APP_CONFIG.appName;
 
         $rootScope.$on('$stateChangeStart', function (event, next, params) {
             $rootScope.toState = next;
             $rootScope.toStateParams = params;
-            if (next.data.authorizedRoles.length === 0) {
-                return;
-            }
-
-            if (authService.isAuthenticated() && authService.isAuthorized(next.data.authorizedRoles)) {
-                //We do nothing. Attempting to transition to the actual state results in call stack exception
-            } else {
-                event.preventDefault();
-                sessionService.retainCurrentLocation();
-                $state.go('login');
-            }
 
             // If we got any open dialogs, close them before route change
             $mdDialog.cancel();
         });
     });
 
-function config($mdThemingProvider, $stateProvider, $urlRouterProvider, USER_ROLES) {
+function config($mdThemingProvider, $stateProvider, $urlRouterProvider) {
     $mdThemingProvider.theme('default')
         .primaryPalette('blue')
         .accentPalette('yellow')
@@ -62,9 +47,7 @@ function config($mdThemingProvider, $stateProvider, $urlRouterProvider, USER_ROL
 
     $stateProvider.state('site', {
         abstract: true,
-        resolve: {
-            authorize: ['authService', function (authService) {}]
-        },
+        resolve: {},
         views: {
             'footer@': {
                 templateUrl: 'app/src/footer/view/footer.html',
@@ -86,37 +69,7 @@ function config($mdThemingProvider, $stateProvider, $urlRouterProvider, USER_ROL
                 controllerAs: 'vm'
             }
         },
-        data: {
-            authorizedRoles: [USER_ROLES.user]
-        }
-    }).state('login', {
-        parent: 'site',
-        url: '/login?error&nosso',
-        views: {
-            'content@': {
-                templateUrl: 'app/src/authentication/view/login.html',
-                controller: 'AuthController',
-                controllerAs: 'vm'
-            },
-            'header@': {},
-            'footer@': {}
-        },
-        data: {
-            authorizedRoles: []
-        }
-    }).state('files', {
-        parent: 'site',
-        url: '/files',
-        views: {
-            'content@': {
-                templateUrl: 'app/src/files/view/files.html',
-                controller: 'FilesController',
-                controllerAs: 'vm'
-            }
-        },
-        data: {
-            authorizedRoles: [USER_ROLES.user]
-        }
+        data: {}
     }).state('search', {
         parent: 'site',
         url: '/search/:searchTerm',
@@ -125,8 +78,6 @@ function config($mdThemingProvider, $stateProvider, $urlRouterProvider, USER_ROL
                 templateUrl: 'app/src/search/view/search.html'
             }
         },
-        data: {
-            authorizedRoles: [USER_ROLES.user]
-        }
+        data: {}
     });
 }

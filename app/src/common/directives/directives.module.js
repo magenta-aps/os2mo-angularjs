@@ -1,1 +1,1 @@
-angular.module('angularStubApp.common.directives', [ 'ngMaterial', 'pascalprecht.translate']);
+angular.module('angularStubApp.common.directives', ['ngMaterial', 'pascalprecht.translate']);

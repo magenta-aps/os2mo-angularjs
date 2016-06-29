@@ -1,1 +1,1 @@
-angular.module('angularStubApp.administration', [ 'ngMaterial', 'pascalprecht.translate']);
+angular.module('angularStubApp.administration', ['ngMaterial', 'pascalprecht.translate']);
