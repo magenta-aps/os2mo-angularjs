@@ -6,7 +6,11 @@
 }
 
 .lang-selector__label {
-    padding-right: 0.5rem;
+    padding-right: 0.25rem;
+    
+    .material-icons {
+        vertical-align: middle;
+    }
 }
 
 .lang-selector__input {
