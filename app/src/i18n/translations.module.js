@@ -6,18 +6,46 @@ angular
         .factory('availableLanguages', AvailableLanguages)
         .config(config);
 
-var availableLanguages = {
-    keys: ['en', 'da'],
-    localesKeys: {
-        'en_US': 'en',
-        'en_UK': 'en',
-        'da_DK': 'da'
+/*
+ * This is where you define the languages you'll want to use in your project.
+ * Make sure to include the corresponding language files (ex en.json).
+ */
+var defineLangs = [
+    {
+        title: 'English (US)',
+        code: 'en',
+        locale: 'en_US'
+    },
+    {
+        title: 'Dansk',
+        code: 'da',
+        locale: 'da_DK'
     }
+];
+
+var availableLanguages = {
+    keys: [],
+    localesKeys: {},
+    languages: []
 };
+
+for (var l in defineLangs) {
+    availableLanguages.keys.push(defineLangs[l].code);
+    availableLanguages.localesKeys[defineLangs[l].locale] = defineLangs[l].code;
+    availableLanguages.languages.push(
+        {
+            title: defineLangs[l].title,
+            code: defineLangs[l].code,
+            locale: defineLangs[l].locale
+        }
+    );
+};
+
 
 function AvailableLanguages() {
     return availableLanguages;
 }
+
 
 function config($translateProvider, languageFilesProvider) {
     languageFilesProvider.addFile('app/src/i18n/','.json');
