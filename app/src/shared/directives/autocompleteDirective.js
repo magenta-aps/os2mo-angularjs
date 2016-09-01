@@ -1,9 +1,8 @@
-
 angular
     .module('angularStubApp')
-    .directive('openeAutocomplete', autocomplete);
+    .directive('commonAutocomplete', autocomplete);
 
-function autocomplete(){
+function autocomplete() {
 
     return {
         restrict: 'E',
@@ -18,7 +17,7 @@ function autocomplete(){
         controllerAs: 'vm',
         controller: '@',
         name: 'controllerName',
-      	bindToController: true,
-        templateUrl: 'app/src/common/components/authoritySelector/view/authoritySelectorOptions.html'
+        bindToController: true,
+        templateUrl: ''
     };
 }

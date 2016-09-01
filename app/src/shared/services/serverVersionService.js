@@ -1,20 +1,20 @@
+angular
+    .module('angularStubApp')
+    .factory('serverVersionService', ServerVersionService);
 
-    angular
-        .module('angularStubApp')
-        .factory('serverVersionService', ServerVersionService);
+function ServerVersionService($http) {
+    return {
+        getGitDetails: getGitDetails
+    };
 
-    function ServerVersionService($http) {
-        return {
-            getGitDetails: getGitDetails
-        };
-
-        function getGitDetails() {
-            return $http.get("/api/opendesk/getversion").then(function (response) {
-                return {
-                    gitCommitId: response.data.scmCommitId,
-                    gitBranch: response.data.scmBranchName
-                };
-            });
-        }
-
+    function getGitDetails() {
+        //point to a rest interface to retrieve repository information details
+        return $http.get("/api/some/endpoint//getversion").then(function (response) {
+            return {
+                gitCommitId: response.data.scmCommitId,
+                gitBranch: response.data.scmBranchName
+            };
+        });
     }
+
+}

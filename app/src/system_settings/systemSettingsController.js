@@ -1,17 +1,15 @@
-
 angular
-        .module('angularStubApp.systemsettings')
-        .controller('SystemSettingsController', SystemSettingsCtrl);
+    .module('angularStubApp.systemsettings')
+    .controller('SystemSettingsController', SystemSettingsCtrl);
 
-function SystemSettingsCtrl(systemSettingsPagesService, authService) {
+function SystemSettingsCtrl(systemSettingsPagesService) {
     var vm = this;
-    var isTenant = authService.getUserInfo().user.userName.indexOf("@") !== -1;
     vm.pages = systemSettingsPagesService.getPages()
-            .filter(function(page) {
-                if (isTenant) {
-                    return page.sref !== 'administration.systemsettings.tenantsmodules';
-                }
-                return true;
-            });
+        .filter(function (page) {
+            if (isTenant) {
+                return page.sref !== 'administration.systemsettings.tenantsmodules';
+            }
+            return true;
+        });
     vm.modulesPages = systemSettingsPagesService.getModulesPages();
 }

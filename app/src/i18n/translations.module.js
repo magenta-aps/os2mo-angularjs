@@ -1,10 +1,9 @@
-angular
-        .module('angularStubApp.translations.init', []);
+angular.module('angularStubApp.translations.init', []);
 
 angular
-        .module('angularStubApp.translations', ['pascalprecht.translate'])
-        .factory('availableLanguages', AvailableLanguages)
-        .config(config);
+    .module('angularStubApp.translations', ['pascalprecht.translate'])
+    .factory('availableLanguages', AvailableLanguages)
+    .config(config);
 
 /*
  * This is where you define the languages you'll want to use in your project.
@@ -48,14 +47,14 @@ function AvailableLanguages() {
 
 
 function config($translateProvider, languageFilesProvider) {
-    languageFilesProvider.addFile('app/src/i18n/','.json');
+    languageFilesProvider.addFile('app/src/i18n/', '.json');
     $translateProvider.useStaticFilesLoader(languageFilesProvider.getLanguageFiles());
 
     $translateProvider.useSanitizeValueStrategy('sanitizeParameters');
 
     $translateProvider
-            .registerAvailableLanguageKeys(availableLanguages.keys, availableLanguages.localesKeys)
-            .determinePreferredLanguage();
+        .registerAvailableLanguageKeys(availableLanguages.keys, availableLanguages.localesKeys)
+        .determinePreferredLanguage();
 
     //set default language if browsers langugage not found
     if (availableLanguages.keys.indexOf($translateProvider.preferredLanguage()) === -1) {

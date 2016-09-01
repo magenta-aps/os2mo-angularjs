@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp.dashboard', [ 'ngMaterial' ])
+    .module('angularStubApp.dashboard', ['ngMaterial'])
     .config(config);
 
 function config(modulesMenuServiceProvider) {

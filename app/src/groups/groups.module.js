@@ -1,1 +1,0 @@
-//angular.module('angularStubApp.groups', [ 'ngMaterial', 'pascalprecht.translate']);
