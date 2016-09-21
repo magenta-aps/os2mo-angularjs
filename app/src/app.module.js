@@ -19,6 +19,7 @@ angular
         'angularStubApp.systemsettings',
         'angularStubApp.common.directives',
         'angularStubApp.common.directives.filter',
+        'angularStubApp.errors',
         'dcbImgFallback',
         /*DO NOT REMOVE MODULES PLACEHOLDER!!!*/ //openDesk-modules
         /*LAST*/ 'angularStubApp.translations'])// TRANSLATIONS IS ALWAYS LAST!

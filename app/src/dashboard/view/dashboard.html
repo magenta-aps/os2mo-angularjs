@@ -3,5 +3,12 @@
     <h1>This is the dashboard module</h1>
 
     <p>Use it for whatever purpose suits you best.</p>
+    
+    <md-button
+        ng-controller="DashboardController as vm"
+        class="md-raised"
+        ng-click="vm.showMeAnError()">
+        Click me to display an error message
+    </md-button>
 
 </section>
