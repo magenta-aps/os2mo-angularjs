@@ -14,6 +14,38 @@ var dist = {
     folder: './dist/'
 };
 
+var environment = {
+    local: {
+        repo: 'http://localhost:8080',
+    },
+    staging: {
+        repo: 'http://staging.openDesk.dk:8080',
+    }
+};
+
+/*
+ * LOCAL WEBSERVER
+ */
+
+function createWebserver(config) {
+    return gulp.src('./')
+        .pipe($.webserver({
+            open: false, // Open up a browser automatically
+            host: '0.0.0.0', // hostname needed if you want to access the server from anywhere on your local network
+            fallback: 'index.html',
+            middleware: function (req, res, next) {
+                res.setHeader('Access-Control-Allow-Origin', '*');
+                res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+                res.setHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");
+                next();
+            },
+            proxies: [{
+                source: '/alfresco',
+                target: config.repo + '/alfresco'
+            }]
+        }));
+}
+
 
 // Script tasks
 gulp.task('scripts', function() {
@@ -89,3 +121,12 @@ gulp.task('ui-test', ['e2e-tests']);
  In other words, the default task is the 'build' and 'watch' task
  */
 gulp.task('default', ['build', 'watch']);
+
+
+gulp.task('demo', ['build', 'watch'], function () {
+    createWebserver(environment.demo);
+});
+
+gulp.task('local', ['build', 'watch'], function () {
+    createWebserver(environment.local);
+});
