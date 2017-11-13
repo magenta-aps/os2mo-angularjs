@@ -9,7 +9,7 @@ Create a folder in [/app/src](/app/src) to contain your module's files and add a
 Here is an example of the [files.module.js](/app/src/files/files.module.js)
 ```
 angular
-    .module('angularStubApp.files', ['ngMaterial'])
+    .module('moApp.files', ['ngMaterial'])
     .config(config);
 
 function config(modulesMenuServiceProvider) {
@@ -25,7 +25,7 @@ Then there is some configuration being done. In this case, a menu item for the m
 Of couse, you'll need to add an entry in the [app.module.js](/app/src/app.module.js) for the new module. Like this:
 ```
 angular
-    .module('angularStubApp', [
+    .module('moApp', [
         ...
         'angularStubApp.files',
         ...
@@ -54,7 +54,7 @@ The `.js` files will all need to start with a declaration to attach to the modul
 Here is an example controller, [FilesController.js](/app/src/files/FilesController.js)
 ```
 angular
-    .module('angularStubApp.files')
+    .module('moApp.files')
     .controller('FilesController', FilesController);
 
 function FilesController($scope, filesService) {
@@ -72,7 +72,7 @@ function FilesController($scope, filesService) {
 Here is an example service, [filesService.js](/app/src/files/filesService.js)
 ```
 angular
-    .module('angularStubApp.files')
+    .module('moApp.files')
     .factory('filesService', FilesService);
 
 function FilesService($http, fileUtilsService, alfrescoNodeUtils) {

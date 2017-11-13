@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp', [
+    .module('moApp', [
         'ngSanitize',
         'ngMaterial',
         'ngMessages',
@@ -8,21 +8,20 @@ angular
         'rt.encodeuri',
         'ngResource',
         'pdf',
-        'swfobject',
         'isteven-multi-select',
-        'angularStubApp.init',
-        'angularStubApp.translations.init',
-        'angularStubApp.header',
-        'angularStubApp.dashboard',
-        'angularStubApp.search',
-        'angularStubApp.administration',
-        'angularStubApp.systemsettings',
-        'angularStubApp.common.directives',
-        'angularStubApp.common.directives.filter',
-        'angularStubApp.errors',
+        'moApp.init',
+        'moApp.translations.init',
+        'moApp.header',
+        'moApp.dashboard',
+        'moApp.search',
+        'moApp.administration',
+        'moApp.systemsettings',
+        'moApp.common.directives',
+        'moApp.common.directives.filter',
+        'moApp.errors',
         'dcbImgFallback',
         /*DO NOT REMOVE MODULES PLACEHOLDER!!!*/ //openDesk-modules
-        /*LAST*/ 'angularStubApp.translations'])// TRANSLATIONS IS ALWAYS LAST!
+        /*LAST*/ 'moApp.translations'])// TRANSLATIONS IS ALWAYS LAST!
     .config(config)
     .run(function ($rootScope, $state, $mdDialog, APP_CONFIG) {
         angular.element(window.document)[0].title = APP_CONFIG.appName;

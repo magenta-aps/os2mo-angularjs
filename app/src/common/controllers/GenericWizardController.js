@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp')
+    .module('moApp')
     .controller('GenericWizardController', GenericWizardController);
 
 function GenericWizardController($mdDialog) {

@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp.header')
+    .module('moApp.header')
     .controller('ModulesMenuController', ModulesMenuController);
 
 function ModulesMenuController(modulesMenuService) {

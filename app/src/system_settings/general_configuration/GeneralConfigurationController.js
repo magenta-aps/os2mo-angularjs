@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp.systemsettings')
+    .module('moApp.systemsettings')
     .controller('GeneralConfigurationController', GeneralConfigurationController);
 
 function GeneralConfigurationController($mdDialog, $translate, $state, notificationUtilsService,

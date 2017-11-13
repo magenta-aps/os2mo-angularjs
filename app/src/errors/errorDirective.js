@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp.errors')
+    .module('moApp.errors')
     .directive('errorMsg', errorMsg); 
 
 function errorMsg(errorService) {

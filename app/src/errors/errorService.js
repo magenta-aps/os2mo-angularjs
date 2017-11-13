@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp.errors')
+    .module('moApp.errors')
     .factory('errorService', errorService);
 
 function errorService() {

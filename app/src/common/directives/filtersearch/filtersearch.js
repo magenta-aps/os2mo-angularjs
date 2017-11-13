@@ -1,4 +1,4 @@
-angular.module('angularStubApp.common.directives.filter')
+angular.module('moApp.common.directives.filter')
     .directive('openeFilterSearch', FilterSearchDirective);
 
 /**

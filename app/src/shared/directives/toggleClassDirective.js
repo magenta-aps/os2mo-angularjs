@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp')
+    .module('moApp')
     .directive('toggleClass', toggleClassDirective);
 
 function toggleClassDirective() {

@@ -9,7 +9,7 @@
  */
 
 angular
-    .module('angularStubApp')
+    .module('moApp')
     .directive('languageSelector', languageSelector);
 
 function languageSelector() {

@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp')
+    .module('moApp')
     .directive('sortTable', sortTable);
 
 function sortTable($compile) {

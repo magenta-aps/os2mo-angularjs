@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp.search')
+    .module('moApp.search')
     .controller('AutosuggestController', AutosuggestController);
 
 /**

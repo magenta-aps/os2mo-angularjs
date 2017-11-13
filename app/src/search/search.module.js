@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp.search', ['ngMaterial', 'pascalprecht.translate'])
+    .module('moApp.search', ['ngMaterial', 'pascalprecht.translate'])
     .config(config);
 
 function config(modulesMenuServiceProvider) {

@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp')
+    .module('moApp')
     .config(config)
     .factory('httpInterceptor', httpInterceptor);
 

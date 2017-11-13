@@ -1,3 +1,3 @@
 angular
-    .module('angularStubApp.core')
+    .module('moApp.core')
     .constant('COMMON_CONSTANTS', {});

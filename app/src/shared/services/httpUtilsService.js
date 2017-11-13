@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp')
+    .module('moApp')
     .factory('httpUtils', httpUtils);
 
 function httpUtils() {

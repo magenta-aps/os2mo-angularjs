@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp.dashboard')
+    .module('moApp.dashboard')
     .provider('dashboardService', dashboardServiceProvider);
 
 function dashboardServiceProvider() {

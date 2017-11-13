@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp')
+    .module('moApp')
     .factory('searchService', searchService);
 
 function searchService($http) {

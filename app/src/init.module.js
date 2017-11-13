@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp.init', ['ngMaterial'])
+    .module('moApp.init', ['ngMaterial'])
     .constant('PATTERNS', {
         fileName: /^[a-zA-Z0-9_\-,!@#$%^&()=+ ]+$/,
         phone: /^[+]?[0-9\- ]+$/

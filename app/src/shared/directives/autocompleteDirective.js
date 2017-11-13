@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp')
+    .module('moApp')
     .directive('commonAutocomplete', autocomplete);
 
 function autocomplete() {

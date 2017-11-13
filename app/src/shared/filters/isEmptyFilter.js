@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp')
+    .module('moApp')
     .filter('isEmpty', isEmptyFilterFactory);
 
 function isEmptyFilterFactory() {

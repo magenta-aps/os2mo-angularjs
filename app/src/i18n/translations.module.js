@@ -1,7 +1,7 @@
-angular.module('angularStubApp.translations.init', []);
+angular.module('moApp.translations.init', []);
 
 angular
-    .module('angularStubApp.translations', ['pascalprecht.translate'])
+    .module('moApp.translations', ['pascalprecht.translate'])
     .factory('availableLanguages', AvailableLanguages)
     .config(config);
 

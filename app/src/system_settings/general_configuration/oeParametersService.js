@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp.systemsettings')
+    .module('moApp.systemsettings')
     .factory('oeParametersService', oeParametersService);
 
 function oeParametersService($http, $window) {

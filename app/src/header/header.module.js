@@ -1,1 +1,1 @@
-angular.module('angularStubApp.header', ['ngMaterial']);
+angular.module('moApp.header', ['ngMaterial']);

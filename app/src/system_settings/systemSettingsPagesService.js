@@ -1,4 +1,4 @@
-angular.module('angularStubApp.systemsettings').provider('systemSettingsPagesService', SystemSettingsPagesServiceProvider);
+angular.module('moApp.systemsettings').provider('systemSettingsPagesService', SystemSettingsPagesServiceProvider);
 
 function SystemSettingsPagesServiceProvider() {
     var pages = [];

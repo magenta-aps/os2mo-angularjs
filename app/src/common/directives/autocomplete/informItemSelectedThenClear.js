@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp.common.directives')
+    .module('moApp.common.directives')
     .directive('informItemSelectedThenClear', informItemSelectedThenClear);
 
 function informItemSelectedThenClear() {

@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp')
+    .module('moApp')
     .filter('countryCodeToName', countryCodeToNameFilter);
 
 function countryCodeToNameFilter($translate) {

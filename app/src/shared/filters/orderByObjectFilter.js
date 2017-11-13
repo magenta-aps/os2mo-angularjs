@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp')
+    .module('moApp')
     .filter('orderObjectBy', orderObjectBy);
 
 function orderObjectBy() {

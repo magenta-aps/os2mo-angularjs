@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp')
+    .module('moApp')
     .controller('FooterController', FooterController);
 
 function FooterController($scope, serverVersionService) {

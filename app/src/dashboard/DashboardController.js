@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp.dashboard')
+    .module('moApp.dashboard')
     .controller('DashboardController', DashboardController);
 
 function DashboardController($scope, dashboardService, errorService) {

@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp')
+    .module('moApp')
     .factory('notificationUtilsService', notificationUtilsService);
 
 function notificationUtilsService($mdToast, $translate) {

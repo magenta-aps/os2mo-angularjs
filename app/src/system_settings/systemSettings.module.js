@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp.systemsettings', ['ngMaterial', 'pascalprecht.translate'])
+    .module('moApp.systemsettings', ['ngMaterial', 'pascalprecht.translate'])
     .config(config);
 
 function config(systemSettingsPagesServiceProvider) {

@@ -16,7 +16,7 @@ Here is an example:
 
 ```
 angular
-    .module('angularStubApp.files', ['ngMaterial'])
+    .module('moApp.files', ['ngMaterial'])
     .config(config);
 
 function config(modulesMenuServiceProvider) {

@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp.translations.init')
+    .module('moApp.translations.init')
     .provider('languageFiles', LanguageFilesProvider);
 
 function LanguageFilesProvider() {

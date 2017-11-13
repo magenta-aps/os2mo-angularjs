@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp.systemsettings')
+    .module('moApp.systemsettings')
     .controller('SystemSettingsController', SystemSettingsCtrl);
 
 function SystemSettingsCtrl(systemSettingsPagesService) {

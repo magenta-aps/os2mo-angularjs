@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp')
+    .module('moApp')
     .factory('serverVersionService', ServerVersionService);
 
 function ServerVersionService($http) {

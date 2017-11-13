@@ -1,4 +1,4 @@
-angular.module('angularStubApp.common.directives')
+angular.module('moApp.common.directives')
     .directive('commonError', CommonErrorDirective);
 
 /**

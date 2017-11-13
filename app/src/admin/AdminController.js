@@ -1,5 +1,5 @@
 angular
-    .module('angularStubApp.administration')
+    .module('moApp.administration')
     .controller('AdminController', AdminController);
 
 /**

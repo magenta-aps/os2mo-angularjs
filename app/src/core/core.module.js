@@ -1,1 +1,1 @@
-angular.module('angularStubApp.core', []);
+angular.module('moApp.core', []);

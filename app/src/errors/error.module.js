@@ -17,4 +17,4 @@
  */
 
 angular
-    .module('angularStubApp.errors', ['ngMaterial', 'pascalprecht.translate']);
+    .module('moApp.errors', ['ngMaterial', 'pascalprecht.translate']);
