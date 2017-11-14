@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-.module('moApp')
+.module('moApp.organisationTree')
 .directive('organisationTree', function () {
     return {
         restrict: 'E',

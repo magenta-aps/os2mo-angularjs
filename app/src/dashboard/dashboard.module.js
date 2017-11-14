@@ -1,7 +1,3 @@
-angular
-    .module('moApp.dashboard', ['ngMaterial'])
-    .config(config);
+'use strict';
 
-function config() {
-    
-}
+angular.module('moApp.dashboard', ['ngMaterial']);

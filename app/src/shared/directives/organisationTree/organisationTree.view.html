@@ -1,1 +1,16 @@
-Jeg er et organisationstræ
+<div ui-tree>
+    <ol ui-tree-nodes="" ng-model="vm.list">
+        <li ng-repeat="item in vm.list" ui-tree-node>
+            <div>
+                {{item.title}}
+            </div>
+            <ol ui-tree-nodes="" ng-model="item.items">
+                <li ng-repeat="subItem in item.nodes" ui-tree-node>
+                    <div>
+                        {{subItem.title}}
+                    </div>
+                </li>
+            </ol>
+        </li>
+    </ol>
+</div>

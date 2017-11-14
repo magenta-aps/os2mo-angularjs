@@ -1,15 +1,15 @@
+'use strict';
+
 angular
     .module('moApp.dashboard')
     .controller('DashboardController', DashboardController);
 
-function DashboardController($scope, dashboardService, errorService) {
+function DashboardController() {
     var vm = this;
-    vm.dashlets = dashboardService.getDashlets();
-    
-    // Testing error message feature
-    vm.showMeAnError = function() {
-        
-        errorService.displayErrorMsg('Here is an example of an error message. Remember to make it translatable!');
-        
-    };
+
+    vm.currentNavItem = 'page1';
+
+    vm.goto = function(page) {
+        console.log("Goto " + page);
+      }
 }
