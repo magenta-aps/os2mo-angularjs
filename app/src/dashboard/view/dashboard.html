@@ -1,18 +1,22 @@
-<section layout-padding>
+<div layout="row">
+    <md-card flex="25">
+        <md-card-content>
+            <organisation-tree></organisation-tree>
+        </md-card-content>
+    </md-card>
+    <div layout="column" flex>
+        <md-card>
+            <md-card-content>
+                jeg er hovedindholdet
+            </md-card-content>
+        </md-card>
 
-    <h1>This is the dashboard module</h1>
+        <md-card flex>
+                <md-card-content>
+                    jeg er handlingerne
+                </md-card-content>
+            </md-card>
+    </div>
+</div>
 
-    <p>Use it for whatever purpose suits you best.</p>
-    
-    <md-button
-        ng-controller="DashboardController as vm"
-        class="md-raised"
-        ng-click="vm.showMeAnError()">
-        Click me to display an error message
-    </md-button>
-
-    <organisation-tree></organisation-tree>
-
-    <sidebar-tools></sidebar-tools>
-
-</section>
+<sidebar-tools></sidebar-tools>

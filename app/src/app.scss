@@ -8,15 +8,22 @@ $background-color: #f2efed;
 $primary-color: #00a65d;
 $primary-color-dark: darken($primary-color, 10%);
 $white: #fff;
-
+$logo-url: '/app/assets/images/os2_logo_white.svg';
 
 /*
  * Global styles
  */
 
- body, md-content {
-   background-color: $background-color;
- }
+body, md-content {
+  background-color: $background-color;
+}
+
+body {
+  background-image: url($logo-url);
+  background-position: right bottom; /*Positioning*/
+  background-repeat: no-repeat; /*Prevent showing multiple background images*/
+  background-size: $u * 20;
+}
 
 dt {
     display: block;

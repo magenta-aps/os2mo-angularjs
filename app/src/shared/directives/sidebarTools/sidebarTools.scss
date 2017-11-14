@@ -1,9 +1,19 @@
-.moToolbar {
+.mo-toolbar {
   position: fixed;
   right: 0;
 
   .md-button {
     background-color: $primary-color-dark;
     color: $white;
+    right: - $u * 8;
+    transition: right .15s;
+    transition-delay: .05s;
+    transition-timing-function: ease-in;
+
+    &:hover {
+      right: 0;
+      transition: right .25s;
+      transition-timing-function: ease-out;
+    }
   }
 }

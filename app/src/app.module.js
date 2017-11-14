@@ -19,6 +19,7 @@ angular
         'moApp.common.directives',
         'moApp.common.directives.filter',
         'moApp.errors',
+        'moApp.sidebarTools',
         'dcbImgFallback',
         /*DO NOT REMOVE MODULES PLACEHOLDER!!!*/ //openDesk-modules
         /*LAST*/ 'moApp.translations'])// TRANSLATIONS IS ALWAYS LAST!
@@ -38,7 +39,7 @@ angular
 
 function config($mdThemingProvider, $stateProvider, $urlRouterProvider) {
     $mdThemingProvider.theme('default')
-        .primaryPalette('blue')
+        .primaryPalette('green')
         .accentPalette('yellow')
         .warnPalette('deep-orange');
 

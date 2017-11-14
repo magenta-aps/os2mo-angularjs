@@ -43,14 +43,10 @@
   </head>
 
   <body ng-app="moApp" layout="column">
-    
-    <header ui-view="header"></header>
 
     <mo-header></mo-header>
     
     <md-content ui-view="content" layout-padding></md-content>
-    
-    <footer ui-view="footer"></footer>
     
     <div id="loader" layout="column" layout-align="center center">
         <md-progress-circular md-diameter="200" flex="initial" md-mode='indeterminate'></md-progress-circular>

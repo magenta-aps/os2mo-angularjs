@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-.module('moApp')
+.module('moApp.sidebarTools')
 .directive('sidebarTools', function () {
     return {
         restrict: 'E',

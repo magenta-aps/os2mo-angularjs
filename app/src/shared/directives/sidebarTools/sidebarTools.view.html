@@ -1,6 +1,8 @@
-<div class="moToolbar">
-    <md-button>
-        <md-icon>add_circle</md-icon>
-        tekst
+<div class="mo-toolbar" layout="column">
+    <md-button ng-repeat="tool in vm.tools">
+        <md-icon>
+            {{tool.icon}}
+        </md-icon>
+        {{tool.label}}
     </md-button>
 </div>
