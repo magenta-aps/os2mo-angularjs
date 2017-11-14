@@ -6,5 +6,5 @@ angular
     })
     .constant('APP_CONFIG', {
         appName: 'Angular-stub',
-        logoSrc: './app/assets/images/logo.gif'
+        logoSrc: './app/assets/images/os2_small.svg'
     });

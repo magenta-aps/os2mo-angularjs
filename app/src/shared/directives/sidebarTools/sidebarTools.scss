@@ -1,0 +1,9 @@
+.moToolbar {
+  position: fixed;
+  right: 0;
+
+  .md-button {
+    background-color: $primary-color-dark;
+    color: $white;
+  }
+}

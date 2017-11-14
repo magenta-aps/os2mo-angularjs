@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
         $ = require('gulp-load-plugins')(),
-        fs = require('fs');
+        fs = require('fs'),
+        autoprefixer = require('gulp-autoprefixer');
 
 var paths = {
     scripts: ['app/src/**/*.module.js', 'app/src/**/*.js', '!app/src/**/*Spec.js', '!app/src/modules/test/**/*.js', '!app/src/modules/**/tests/**/*.js'],
@@ -65,16 +66,31 @@ gulp.task('scripts', function() {
 });
 
 // Css
-gulp.task('css', function() {
+// gulp.task('css', function() {
+//     return gulp.src(paths.scss)
+//             .pipe($.wrap('/** ---------------- \n * Filepath: <%= file.relative %>\n */\n<%= contents %>'))
+//             .pipe($.concat(dist.name + '.scss'))
+//             .pipe($.sass())
+//             .pipe(gulp.dest(dist.folder))
+//             .pipe($.rename({suffix: '.min'}))
+//             .pipe($.minifyCss())
+//             .pipe(gulp.dest(dist.folder))
+//             .on('error', $.util.log);
+// });
+gulp.task('css', function () {
     return gulp.src(paths.scss)
-            .pipe($.wrap('/** ---------------- \n * Filepath: <%= file.relative %>\n */\n<%= contents %>'))
-            .pipe($.concat(dist.name + '.scss'))
-            .pipe($.sass())
-            .pipe(gulp.dest(dist.folder))
-            .pipe($.rename({suffix: '.min'}))
-            .pipe($.minifyCss())
-            .pipe(gulp.dest(dist.folder))
-            .on('error', $.util.log);
+        .pipe($.wrap('/** ---------------- \n * Filepath: <%= file.relative %>\n */\n<%= contents %>'))
+        .pipe($.concat(dist.name + '.scss'))
+        .pipe($.sass())
+        .pipe(gulp.dest(dist.folder))
+        .pipe($.rename({suffix: '.min'}))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe($.minifyCss())
+        .pipe(gulp.dest(dist.folder))
+        .on('error', $.util.log);
 });
 
 // UI-test

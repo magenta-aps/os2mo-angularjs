@@ -52,11 +52,6 @@ function config($mdThemingProvider, $stateProvider, $urlRouterProvider) {
             'footer@': {
                 templateUrl: 'app/src/footer/view/footer.html',
                 controller: 'FooterController'
-            },
-            'header@': {
-                templateUrl: 'app/src/header/view/header.html',
-                controller: 'HeaderController',
-                controllerAs: 'vm'
             }
         }
     }).state('dashboard', {

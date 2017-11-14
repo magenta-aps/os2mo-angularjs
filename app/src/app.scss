@@ -2,12 +2,21 @@
  * Global values
  */
 
-$u: 16px;
+$u: 12px;
+
+$background-color: #f2efed;
+$primary-color: #00a65d;
+$primary-color-dark: darken($primary-color, 10%);
+$white: #fff;
 
 
 /*
  * Global styles
  */
+
+ body, md-content {
+   background-color: $background-color;
+ }
 
 dt {
     display: block;
