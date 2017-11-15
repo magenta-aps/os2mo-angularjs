@@ -2,6 +2,59 @@
  * Global values
  */
 
+/* montserrat-regular - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/app/assets/fonts/montserrat-v12-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Montserrat Regular'), local('Montserrat-Regular'),
+       url('/app/assets/fonts/montserrat-v12-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/app/assets/fonts/montserrat-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/app/assets/fonts/montserrat-v12-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('/app/assets/fonts/montserrat-v12-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/app/assets/fonts/montserrat-v12-latin-regular.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+/* montserrat-italic - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/app/assets/fonts/montserrat-v12-latin-italic.eot'); /* IE9 Compat Modes */
+  src: local('Montserrat Italic'), local('Montserrat-Italic'),
+       url('/app/assets/fonts/montserrat-v12-latin-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/app/assets/fonts/montserrat-v12-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/app/assets/fonts/montserrat-v12-latin-italic.woff') format('woff'), /* Modern Browsers */
+       url('/app/assets/fonts/montserrat-v12-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/app/assets/fonts/montserrat-v12-latin-italic.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+/* montserrat-800 - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  src: url('/app/assets/fonts/montserrat-v12-latin-800.eot'); /* IE9 Compat Modes */
+  src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),
+       url('/app/assets/fonts/montserrat-v12-latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/app/assets/fonts/montserrat-v12-latin-800.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/app/assets/fonts/montserrat-v12-latin-800.woff') format('woff'), /* Modern Browsers */
+       url('/app/assets/fonts/montserrat-v12-latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/app/assets/fonts/montserrat-v12-latin-800.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+/* montserrat-800italic - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 800;
+  src: url('/app/assets/fonts/montserrat-v12-latin-800italic.eot'); /* IE9 Compat Modes */
+  src: local('Montserrat ExtraBold Italic'), local('Montserrat-ExtraBoldItalic'),
+       url('/app/assets/fonts/montserrat-v12-latin-800italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/app/assets/fonts/montserrat-v12-latin-800italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/app/assets/fonts/montserrat-v12-latin-800italic.woff') format('woff'), /* Modern Browsers */
+       url('/app/assets/fonts/montserrat-v12-latin-800italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/app/assets/fonts/montserrat-v12-latin-800italic.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+
 $u: 12px;
 
 $background-color: #f2efed;
@@ -23,36 +76,37 @@ body {
   background-position: right bottom; /*Positioning*/
   background-repeat: no-repeat; /*Prevent showing multiple background images*/
   background-size: $u * 20;
+  font-family: 'Montserrat', 'Open Sans', sans-serif;
 }
 
 dt {
-    display: block;
-    text-transform: uppercase;
-    font-size: 0.7em;
-    opacity: 0.65;
+  display: block;
+  font-size: .7em;
+  opacity: .65;
+  text-transform: uppercase;
 }
 
 dd {
-    display: block;
-    padding: 0 0 $u;
-    margin: 0;
+  display: block;
+  margin: 0;
+  padding: 0 0 $u;
 }
 
 
 #loader {
-  visibility: hidden;
-  position: absolute;
+  -moz-opacity: 0.7;
+  background: rgba(255, 255, 255, .5);
+  filter: alpha(opacity=70);
   height: 100%;
+  opacity: .7;
+  position: absolute;
+  visibility: hidden;
   width: 100%;
   z-index: 99;
-  background: rgba(255, 255, 255, 0.5);
-  opacity: 0.7;
-  filter: alpha(opacity=70);
-  -moz-opacity: 0.7;
 }
 
 // Buttons (adjust .md-button)
 .md-text-icon-button .material-icons {
   vertical-align: middle;
-  margin-top: -($u*0.25);
+  margin-top: -($u * .25);
 }
