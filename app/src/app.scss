@@ -79,20 +79,6 @@ body {
   font-family: 'Montserrat', 'Open Sans', sans-serif;
 }
 
-dt {
-  display: block;
-  font-size: .7em;
-  opacity: .65;
-  text-transform: uppercase;
-}
-
-dd {
-  display: block;
-  margin: 0;
-  padding: 0 0 $u;
-}
-
-
 #loader {
   -moz-opacity: 0.7;
   background: rgba(255, 255, 255, .5);

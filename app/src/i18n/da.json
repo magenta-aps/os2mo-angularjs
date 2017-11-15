@@ -194,5 +194,22 @@
     "FIND_GROUPS": "Find grupper",
     "FIND_PERSON": "Find personer",
     "FIND_ORGANISATION": "Find organisationer"
+  },
+  "DATE": {
+    "DATE": "Dato",
+    "START_DATE": "Startdato",
+    "END_DATE": "Slutdato"
+  },
+  "EMPLOYEE": {
+    "EMPLOYEE": "Medarbejder"
+  },
+  "ORGANISATION": {
+    "ORGANISATION": "Organisation",
+    "NEW_UNIT": "Ny enhed",
+    "RENAME_UNIT": "Omdøb enhed",
+    "MOVE_UNIT": "Flyt enhed",
+    "END_UNIT": "Afslut enhed",
+    "UNIT_TYPE": "Enhedstype",
+    "SUPER_UNIT": "Overenhed"
   }
 }

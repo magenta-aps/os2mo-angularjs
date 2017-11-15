@@ -1,0 +1,89 @@
+<md-dialog aria-label="Mango (Fruit)">
+    <form ng-cloak name="createOrganisationForm">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Opret ny enhed</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="vm.cancelDialog()">
+                    <md-icon>close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content layout="column">
+            <div layout="row">
+                <md-datepicker ng-model="ctrl.startDate" md-placeholder="{{'DATE.START_DATE' | translate}}"></md-datepicker>
+                <md-datepicker ng-model="ctrl.endDate" md-placeholder="{{'DATE.END_DATE' | translate}}"></md-datepicker>
+            </div>
+            <div layout="row">
+                <md-input-container>
+                    <label>{{'COMMON.NAME' | translate}}</label>
+                    <input ng-model="vm.organisation.name" type="text" required>
+                </md-input-container>
+
+                <md-input-container>
+                    <label>{{'ORGANISATION.UNIT_TYPE' | translate}}</label>
+                    <md-select ng-model="vm.organisation.type" required>
+                        <md-option ng-repeat="type in vm.orgTypes" value="{{state.label}}">
+                            {{type.label}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+
+            <md-input-container>
+                <label>{{'ORGANISATION.SUPER_UNIT' | translate}}</label>
+                <input ng-model="vm.organisation.parent" type="text" required>
+            </md-input-container>
+
+            <div layout="row">
+                <md-input-container>
+                    <label>Find adresse</label>
+                    <input ng-model="vm.organisation.address" type="text" required>
+                </md-input-container>
+
+                <md-checkbox ng-model="vm.organisation.search_country" aria-label="Checkbox 2" class="md-warn md-align-top-left" flex>
+                    Søg i hele landet
+                </md-checkbox>
+
+                <md-input-container>
+                    <label>Lokationsnavn</label>
+                    <input ng-model="vm.organisation.location" type="text" required>
+                </md-input-container>
+            </div>
+
+            <div layout="row">
+
+                <md-input-container>
+                    <label>Kontaktkanal</label>
+                    <md-select ng-model="vm.organisation.contact_channel" required>
+                        <md-option ng-repeat="type in vm.orgTypes" value="{{state.label}}">
+                            {{type.label}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Telefon nr.</label>
+                    <input ng-model="vm.organisation.location" type="text" required>
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Egenskaber</label>
+                    <md-select ng-model="vm.organisation.contact_channel" required>
+                        <md-option ng-repeat="type in vm.orgTypes" value="{{state.label}}">
+                            {{type.label}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button class="md-icon-button" ng-disabled="createOrganisationForm.$invalid">
+                <md-icon>done</md-icon>
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

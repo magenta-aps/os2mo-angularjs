@@ -1,3 +1,5 @@
+'use strict';
+
 angular
     .module('moApp', [
         'ngSanitize',
@@ -14,6 +16,7 @@ angular
         'moApp.header',
         'moApp.dashboard',
         'moApp.search',
+        'moApp.organisation',
         'moApp.administration',
         'moApp.systemsettings',
         'moApp.common.directives',
@@ -21,6 +24,7 @@ angular
         'moApp.errors',
         'moApp.sidebarTools',
         'moApp.organisationTree',
+        'moApp.log',
         'dcbImgFallback',
         /*DO NOT REMOVE MODULES PLACEHOLDER!!!*/ //openDesk-modules
         /*LAST*/ 'moApp.translations'])// TRANSLATIONS IS ALWAYS LAST!
@@ -56,17 +60,43 @@ function config($mdThemingProvider, $stateProvider, $urlRouterProvider) {
                 controller: 'FooterController'
             }
         }
-    }).state('dashboard', {
+    })
+    .state('dashboard', {
         parent: 'site',
         url: '/',
         views: {
             'content@': {
                 templateUrl: 'app/src/dashboard/view/dashboard.html',
-                controller: 'DashboardController',
+            }
+        },
+        data: {}
+    }).state('organisation', {
+        parent: 'site',
+        url: '/organisation',
+        views: {
+            'content@': {
+                templateUrl: 'app/src/organisation/organisation.view.html',
+                controller: 'OrganisationController',
                 controllerAs: 'vm'
             }
         },
         data: {}
+    }).state('employee', {
+        parent: 'site',
+        url: '/medarbejdere',
+        views: {
+            'content@': {
+                templateUrl: 'app/src/employee/employee.view.html',
+            }
+        }
+    }).state('timemachine', {
+        parent: 'site',
+        url: '/tidsmaskine',
+        views: {
+            'content@': {
+                templateUrl: 'app/src/timemachine/timemachine.view.html',
+            }
+        }
     }).state('search', {
         parent: 'site',
         url: '/search/:searchTerm',

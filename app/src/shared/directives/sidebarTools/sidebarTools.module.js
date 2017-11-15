@@ -1,4 +1,3 @@
 'use strict';
 
-angular
-.module('moApp.sidebarTools', ['ngMaterial']);
+angular.module('moApp.sidebarTools', ['ngMaterial']);

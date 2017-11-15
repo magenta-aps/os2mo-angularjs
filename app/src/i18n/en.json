@@ -194,5 +194,22 @@
     "FIND_GROUPS": "Find groups",
     "FIND_PERSON": "Find persons",
     "FIND_ORGANISATION": "Find organizations"
+  },
+  "DATE": {
+    "DATE": "Date",
+    "START_DATE": "Start date",
+    "END_DATE": "End date"
+  },
+  "EMPLOYEE": {
+    "EMPLOYEE": "Employee"
+  },
+  "ORGANISATION": {
+    "ORGANISATION": "Organisation",
+    "NEW_UNIT": "New unit",
+    "RENAME_UNIT": "Rename unit",
+    "MOVE_UNIT": "Move unit",
+    "END_UNIT": "End unit",
+    "UNIT_TYPE": "Unit type",
+    "SUPER_UNIT": "Super unit"
   }
 }

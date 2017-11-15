@@ -1,19 +1,13 @@
 'use strict';
 
 angular
-    .module('moApp.dashboard')
-    .controller('DashboardController', DashboardController);
+    .module('moApp.organisation')
+    .controller('OrganisationController', OrganisationController);
 
-function DashboardController($scope, $mdDialog) {
+function OrganisationController($scope, $mdDialog) {
     var vm = this;
 
-    vm.currentNavItem = 'page1';
-
-    vm.goto = function(page) {
-        console.log("Goto " + page);
-    };
-
-    $scope.$on('new-organisation', function() {
+    $scope.$on('new-organisation', function () {
         newOrganisationDialog();
     });
 

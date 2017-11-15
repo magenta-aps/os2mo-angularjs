@@ -3,13 +3,13 @@
 
         <img style="height:40px" ng-src="{{vm.logoUrl}}">
 
-        <md-button>Medarbejder</md-button>
+        <md-button ui-sref="employee">{{'EMPLOYEE' | translate}}</md-button>
 
-        <md-button>Organisation</md-button>
+        <md-button ui-sref="organisation">{{'ORGANISATION' | translate}}</md-button>
 
         <span flex></span>
 
-        <md-button class="md-icon-button">
+        <md-button ui-sref="timemachine" class="md-icon-button">
             <md-icon>history</md-icon>
         </md-button>
 
@@ -20,7 +20,7 @@
         <md-icon>person</md-icon>
         admin
 
-        <md-button>log ud</md-button>
+        <md-button>{{'MENU.LOGOUT' | translate}}</md-button>
 
     </div>
 </md-toolbar>

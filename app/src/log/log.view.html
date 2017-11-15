@@ -1,0 +1,15 @@
+<md-nav-bar md-selected-nav-item="vm.currentNavItem" nav-bar-aria-label="navigation links" md-swipe-content>
+    <md-nav-item md-nav-click="vm.goto('page1')" name="page1">
+        Arbejdslog
+    </md-nav-item>
+    <md-nav-item md-nav-click="vm.goto('page2')" name="page2">
+        Begivenheder
+    </md-nav-item>
+    <md-nav-item md-nav-click="vm.goto('page3')" name="page3">
+        Fejl
+    </md-nav-item>
+</md-nav-bar>
+<div class="ext-content">
+    External content for `
+    <span>{{vm.currentNavItem}}</span>`.
+</div>
