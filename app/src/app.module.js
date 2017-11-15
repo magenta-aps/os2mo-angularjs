@@ -15,7 +15,7 @@ angular
         'moApp.translations.init',
         'moApp.header',
         'moApp.dashboard',
-        'moApp.search',
+        'moApp.searchBar',
         'moApp.organisation',
         'moApp.administration',
         'moApp.systemsettings',
