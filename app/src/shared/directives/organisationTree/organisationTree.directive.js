@@ -5,7 +5,9 @@ angular
 .directive('organisationTree', function () {
     return {
         restrict: 'E',
-        scope: {},
+        scope: {
+            orgUuid: "=moOrgUuid"
+        },
         templateUrl: 'app/src/shared/directives/organisationTree/organisationTree.view.html',
         controller: 'OrganisationTreeController',
         controllerAs: 'vm'

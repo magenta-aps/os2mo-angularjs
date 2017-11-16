@@ -5,7 +5,9 @@ angular
 .directive('sidebarTools', function () {
     return {
         restrict: 'E',
-        scope: {},
+        scope: {
+            tools: '=moTools'
+        },
         templateUrl: 'app/src/shared/directives/sidebarTools/sidebarTools.view.html',
         controller: 'SidebarToolsController',
         controllerAs: 'vm'

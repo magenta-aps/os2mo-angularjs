@@ -17,6 +17,7 @@ angular
         'moApp.dashboard',
         'moApp.searchBar',
         'moApp.organisation',
+        'moApp.employee',
         'moApp.administration',
         'moApp.systemsettings',
         'moApp.common.directives',
@@ -81,12 +82,25 @@ function config($mdThemingProvider, $stateProvider, $urlRouterProvider) {
             }
         },
         data: {}
-    }).state('employee', {
+    }).state('organisation.detail', {
+        url: '/:org_uuid',
+        views: {
+            'organisationDetail': {
+                templateUrl: 'app/src/organisation/organisationDetail/organisationDetail.view.html',
+                controller: 'OrganisationDetailController',
+                controllerAs: 'vm'
+            }
+        },
+    })
+    
+    .state('employee', {
         parent: 'site',
         url: '/medarbejdere',
         views: {
             'content@': {
                 templateUrl: 'app/src/employee/employee.view.html',
+                controller: 'EmployeeController',
+                controllerAs: 'vm'
             }
         }
     }).state('timemachine', {

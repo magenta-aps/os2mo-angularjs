@@ -10,7 +10,7 @@ function DashboardController($scope, $mdDialog) {
     vm.currentNavItem = 'page1';
 
     vm.goto = function(page) {
-        console.log("Goto " + page);
+        
     };
 
     $scope.$on('new-organisation', function() {

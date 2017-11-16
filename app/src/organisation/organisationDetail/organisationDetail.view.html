@@ -1,0 +1,36 @@
+Enhed: {{vm.organisation.unit.name}}
+<br> Enheds nr.: {{vm.organisation.unit['user-key']}}
+
+<md-nav-bar md-selected-nav-item="vm.currentNavItem" nav-bar-aria-label="navigation links" md-swipe-content>
+    <md-nav-item md-nav-click="vm.goto('page1')" name="page1">
+        Enhed
+    </md-nav-item>
+    <md-nav-item md-nav-click="vm.goto('page2')" name="page2">
+        Lokation
+    </md-nav-item>
+    <md-nav-item md-nav-click="vm.goto('page3')" name="page3">
+        Kontaktkanal
+    </md-nav-item>
+</md-nav-bar>
+<div>
+    <table style="width:100%">
+        <thead>
+            <tr>
+                <th>Enhedsnavn</th>
+                <th>Enhedstype</th>
+                <th>Overenhed</th>
+                <th>Startdato</th>
+                <th>Slutdato</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{vm.organisation.unit.name}}</td>
+                <td>{{vm.organisation.unit.type.name}}</td>
+                <td>{{vm.organisation.unit['parent-object'].name}}</td>
+                <td>{{vm.organisation.unit['valid-from']}}</td>
+                <td>{{vm.organisation.unit['valid-to']}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

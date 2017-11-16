@@ -1,16 +1,21 @@
 <div layout="row">
     <md-card flex="25">
         <md-card-content>
-            <organisation-tree></organisation-tree>
+            <md-input-container>
+                <label>Organisation</label>
+                <md-select ng-model="vm.selectedOrganisation" required>
+                    <md-option ng-repeat="org in vm.organisations" value="{{org.uuid}}" ng-selected="$first">
+                        {{org.name}}
+                    </md-option>
+                </md-input-container>
+                
+            <organisation-tree mo-org-uuid="vm.selectedOrganisation"></organisation-tree>
         </md-card-content>
     </md-card>
     <div layout="column" flex>
         <md-card>
             <md-card-content>
-                Enhed: enhedsnavn
-                Enheds nr.: 123456
-
-
+                <div ui-view="organisationDetail"></div>
             </md-card-content>
         </md-card>
 
@@ -22,4 +27,4 @@
     </div>
 </div>
 
-<sidebar-tools></sidebar-tools>
+<sidebar-tools mo-tools="vm.toolbar"></sidebar-tools>

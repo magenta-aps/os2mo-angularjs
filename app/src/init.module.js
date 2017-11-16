@@ -1,3 +1,5 @@
+'use strict';
+
 angular
     .module('moApp.init', ['ngMaterial'])
     .constant('PATTERNS', {

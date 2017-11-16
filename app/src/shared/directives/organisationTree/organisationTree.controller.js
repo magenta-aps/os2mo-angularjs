@@ -4,59 +4,32 @@ angular
     .module('moApp.organisationTree')
     .controller('OrganisationTreeController', OrganisationTreeController);
 
-function OrganisationTreeController() {
+function OrganisationTreeController($scope, $state, organisationService) {
     var vm = this;
 
-    vm.list = [
-        {
-          "id": 1,
-          "title": "node1",
-          "nodes": [
-            {
-              "id": 11,
-              "title": "node1.1",
-              "nodes": [
-                {
-                  "id": 111,
-                  "title": "node1.1.1",
-                  "nodes": []
-                }
-              ]
-            },
-            {
-              "id": 12,
-              "title": "node1.2",
-              "nodes": []
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "title": "node2",
-          "nodrop": true,
-          "nodes": [
-            {
-              "id": 21,
-              "title": "node2.1",
-              "nodes": []
-            },
-            {
-              "id": 22,
-              "title": "node2.2",
-              "nodes": []
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "title": "node3",
-          "nodes": [
-            {
-              "id": 31,
-              "title": "node3.1",
-              "nodes": []
-            }
-          ]
-        }
-      ];
+    vm.hierarchy = [];
+    vm.getLink = getLink;
+    vm.viewOrganisation = viewOrganisation;
+
+    $scope.$watch("orgUuid", function(newVal) {
+      getFullHierarchy();
+    });
+
+    function getFullHierarchy() {
+      organisationService.getFullHierachy($scope.orgUuid).then(function(response) {
+        vm.hierarchy = response;
+      });
+    }
+
+    function getLink(uuid) {
+      return 'organisation.detail({org_uuid: "' + uuid+ '"})';
+    }
+
+    function viewOrganisation(organisation) {
+      organisationService.setSelectedOrganisation(organisation);
+
+      $state.go('organisation.detail', {
+        org_uuid: organisation.uuid
+      });
+    }
 }

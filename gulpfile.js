@@ -17,7 +17,7 @@ var dist = {
 
 var environment = {
     local: {
-        repo: 'http://localhost:8080',
+        repo: 'http://localhost:5000',
     },
     staging: {
         repo: 'http://staging.openDesk.dk:8080',
@@ -32,7 +32,8 @@ function createWebserver(config) {
     return gulp.src('./')
         .pipe($.webserver({
             open: false, // Open up a browser automatically
-            host: '0.0.0.0', // hostname needed if you want to access the server from anywhere on your local network
+            host: 'localhost', // hostname needed if you want to access the server from anywhere on your local network
+            port: '9000',
             fallback: 'index.html',
             middleware: function (req, res, next) {
                 res.setHeader('Access-Control-Allow-Origin', '*');
@@ -40,10 +41,16 @@ function createWebserver(config) {
                 res.setHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");
                 next();
             },
-            proxies: [{
-                source: '/alfresco',
-                target: config.repo + '/alfresco'
-            }]
+            proxies: [
+                {
+                    source: '/o',
+                    target: config.repo + '/o',
+                },
+                {
+                    source: '/e',
+                    target: config.repo + '/e',
+                },
+            ]
         }));
 }
 
@@ -65,18 +72,6 @@ gulp.task('scripts', function() {
             .on('error', $.util.log);
 });
 
-// Css
-// gulp.task('css', function() {
-//     return gulp.src(paths.scss)
-//             .pipe($.wrap('/** ---------------- \n * Filepath: <%= file.relative %>\n */\n<%= contents %>'))
-//             .pipe($.concat(dist.name + '.scss'))
-//             .pipe($.sass())
-//             .pipe(gulp.dest(dist.folder))
-//             .pipe($.rename({suffix: '.min'}))
-//             .pipe($.minifyCss())
-//             .pipe(gulp.dest(dist.folder))
-//             .on('error', $.util.log);
-// });
 gulp.task('css', function () {
     return gulp.src(paths.scss)
         .pipe($.wrap('/** ---------------- \n * Filepath: <%= file.relative %>\n */\n<%= contents %>'))
