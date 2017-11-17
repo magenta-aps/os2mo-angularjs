@@ -71,26 +71,6 @@ function config($mdThemingProvider, $stateProvider, $urlRouterProvider) {
             }
         },
         data: {}
-    }).state('organisation', {
-        parent: 'site',
-        url: '/organisation',
-        views: {
-            'content@': {
-                templateUrl: 'app/src/organisation/organisation.view.html',
-                controller: 'OrganisationController',
-                controllerAs: 'vm'
-            }
-        },
-        data: {}
-    }).state('organisation.detail', {
-        url: '/:org_uuid',
-        views: {
-            'organisationDetail': {
-                templateUrl: 'app/src/organisation/organisationDetail/organisationDetail.view.html',
-                controller: 'OrganisationDetailController',
-                controllerAs: 'vm'
-            }
-        },
     })
     
     .state('employee', {

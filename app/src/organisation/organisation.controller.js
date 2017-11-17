@@ -30,9 +30,9 @@ function OrganisationController($scope, $mdDialog, organisationService, sidebarT
             broadcast: 'new-organisation'
         });
         sidebarToolsService.addTool(vm.toolbar, {
-            icon: 'title',
-            label: 'Omdøb enhed',
-            broadcast: 'rename-organisation'
+            icon: 'edit',
+            label: 'Rediger enhed',
+            broadcast: 'edit-organisation'
         });
         sidebarToolsService.addTool(vm.toolbar, {
             icon: 'compare_arrows',

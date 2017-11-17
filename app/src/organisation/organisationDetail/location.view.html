@@ -1,0 +1,20 @@
+<table class="org-table">
+    <thead>
+        <tr>
+            <th>Adresse</th>
+            <th>Lokationsnavn</th>
+            <th>Primæradresse</th>
+            <th>Startdato</th>
+            <th>Slutdato</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{vm.organisation.location.location.vejnavn}}</td>
+            <td>{{vm.organisation.location.name}}</td>
+            <td>{{vm.organisation.location.primaer}}</td>
+            <td>{{vm.organisation.location['valid-from']}}</td>
+            <td>{{vm.organisation.location['valid-to']}}</td>
+        </tr>
+    </tbody>
+</table>

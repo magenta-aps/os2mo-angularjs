@@ -1,36 +1,23 @@
-Enhed: {{vm.organisation.unit.name}}
-<br> Enheds nr.: {{vm.organisation.unit['user-key']}}
+<div layout="row">
+    Enhed: {{vm.organisation.unit.name}}
+    <br> Enheds nr.: {{vm.organisation.unit['user-key']}}
+    <span flex></span>
+    <md-button class="md-icon-button">
+        <md-icon>access_time</md-icon>
+    </md-button>
+</div>
 
 <md-nav-bar md-selected-nav-item="vm.currentNavItem" nav-bar-aria-label="navigation links" md-swipe-content>
-    <md-nav-item md-nav-click="vm.goto('page1')" name="page1">
+    <md-nav-item md-nav-click="vm.show('unit')" name="unit">
         Enhed
     </md-nav-item>
-    <md-nav-item md-nav-click="vm.goto('page2')" name="page2">
+    <md-nav-item md-nav-click="vm.show('location')" name="location">
         Lokation
     </md-nav-item>
-    <md-nav-item md-nav-click="vm.goto('page3')" name="page3">
+    <md-nav-item md-nav-click="vm.show('contact')" name="contact">
         Kontaktkanal
     </md-nav-item>
 </md-nav-bar>
-<div>
-    <table style="width:100%">
-        <thead>
-            <tr>
-                <th>Enhedsnavn</th>
-                <th>Enhedstype</th>
-                <th>Overenhed</th>
-                <th>Startdato</th>
-                <th>Slutdato</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{vm.organisation.unit.name}}</td>
-                <td>{{vm.organisation.unit.type.name}}</td>
-                <td>{{vm.organisation.unit['parent-object'].name}}</td>
-                <td>{{vm.organisation.unit['valid-from']}}</td>
-                <td>{{vm.organisation.unit['valid-to']}}</td>
-            </tr>
-        </tbody>
-    </table>
+<div ui-view="detailTab">
+
 </div>
