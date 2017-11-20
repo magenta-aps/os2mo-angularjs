@@ -15,7 +15,8 @@ function organisationService($http) {
         getSelectedOrganisation: getSelectedOrganisation,
         getUnitDetails: getUnitDetails,
         getLocationDetails: getLocationDetails,
-        getContactDetails: getContactDetails
+        getContactDetails: getContactDetails,
+        getHistory: getHistory
     };
 
     return service;
@@ -74,6 +75,12 @@ function organisationService($http) {
 
     function getDetail(org_uuid, org_unit_uuid, detail) {
         return $http.get('/o/'+ org_uuid +'/org-unit/'+ org_unit_uuid +'/role-types/' + detail + '/?validity=present').then(function(response) {
+            return response.data[0];
+        });
+    }
+
+    function getHistory(org_uuid, org_unit_uuid) {
+        return $http.get('/o/'+ org_uuid +'/org-unit/'+ org_unit_uuid +'/history/').then(function(response) {
             return response.data[0];
         });
     }

@@ -43,7 +43,7 @@ angular
         });
     });
 
-function config($mdThemingProvider, $stateProvider, $urlRouterProvider) {
+function config($mdThemingProvider, $stateProvider, $urlRouterProvider, $locationProvider) {
     $mdThemingProvider.theme('default')
         .primaryPalette('green')
         .accentPalette('teal')
@@ -51,6 +51,8 @@ function config($mdThemingProvider, $stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider
         .otherwise('/');
+
+    $locationProvider.html5Mode(true);
 
     $stateProvider.state('dashboard', {
         url: '/',

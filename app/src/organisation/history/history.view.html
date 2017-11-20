@@ -1,0 +1,39 @@
+<md-dialog aria-label="Mango (Fruit)">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Historik</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="vm.cancelDialog()">
+                <md-icon>close</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content layout="column">
+        <table class="org-table">
+                <thead>
+                    <tr>
+                        <th>Dato</th>
+                        <th>Sektion</th>
+                        <th>Handling</th>
+                        <th>Objekt</th>
+                        <th>Ændringer aktive fra</th>
+                        <th>Udført af</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{vm.history.date}}</td>
+                        <td>{{vm.history.section}}</td>
+                        <td>{{vm.history.action}}</td>
+                        <td>{{vm.history.object}}</td>
+                        <td>{{vm.history.from}}</td>
+                        <td>{{vm.history.changedBy}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+    </md-dialog-content>
+
+</md-dialog>

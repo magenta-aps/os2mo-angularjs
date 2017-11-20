@@ -4,12 +4,13 @@ angular
     .module('moApp.organisation')
     .controller('OrganisationDetailController', OrganisationDetailController);
 
-function OrganisationDetailController($scope, $state, $mdDialog, organisationService) {
+function OrganisationDetailController($scope, $rootScope, $state, $mdDialog, organisationService) {
     var vm = this;
     var org = organisationService.getSelectedOrganisation();
 
     vm.organisation = {};
     vm.show = show;
+    vm.showHistory = showHistory;
     vm.currentNavItem = 'unit';
 
     activate();
@@ -29,8 +30,12 @@ function OrganisationDetailController($scope, $state, $mdDialog, organisationSer
         });
     }
 
-
     function show(detail) {
         $state.go('organisation.detail.' + detail);
+    }
+
+    function showHistory() {
+        console.log('history');
+        $rootScope.$broadcast('show-history');
     }
 }

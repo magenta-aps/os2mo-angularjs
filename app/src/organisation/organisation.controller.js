@@ -24,6 +24,10 @@ function OrganisationController($scope, $mdDialog, organisationService, sidebarT
         endOrganisationDialog();
     });
 
+    $scope.$on('show-history', function() {
+        historyDialog();
+    });
+
     activate();
 
     function activate() {
@@ -76,6 +80,15 @@ function OrganisationController($scope, $mdDialog, organisationService, sidebarT
         $mdDialog.show({
             templateUrl: 'app/src/organisation/endOrganisation/endOrganisation.view.html',
             controller: 'EndOrganisationController',
+            controllerAs: 'vm',
+            clickOutsideToClose: true
+        });
+    }
+
+    function historyDialog() {
+        $mdDialog.show({
+            templateUrl: 'app/src/organisation/history/history.view.html',
+            controller: 'HistoryController',
             controllerAs: 'vm',
             clickOutsideToClose: true
         });
