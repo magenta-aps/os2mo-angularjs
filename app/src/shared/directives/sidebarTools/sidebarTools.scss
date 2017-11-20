@@ -1,6 +1,7 @@
 .mo-toolbar {
   position: fixed;
   right: 0;
+  top: $u * 10;
 
   .md-button {
     right: - $u * 8;

@@ -1,0 +1,26 @@
+<md-dialog aria-label="Mango (Fruit)">
+        <form ng-cloak name="createOrganisationForm">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>Afslut enhed</h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" ng-click="vm.cancelDialog()">
+                        <md-icon>close</md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+    
+            <md-dialog-content layout="column">
+                <div layout="row">
+                    <md-datepicker ng-model="ctrl.startDate" md-placeholder="Dato for afslutning"></md-datepicker>
+                </div>
+            </md-dialog-content>
+
+            <md-dialog-actions layout="row">
+                <span flex></span>
+                <md-button class="md-icon-button" ng-disabled="createOrganisationForm.$invalid">
+                    <md-icon>done</md-icon>
+                </md-button>
+            </md-dialog-actions>
+        </form>
+    </md-dialog>

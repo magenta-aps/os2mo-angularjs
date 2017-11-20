@@ -4,7 +4,6 @@ angular.module('moApp.organisation', ['ngMaterial']).config(config);
 
 function config($stateProvider) {
     $stateProvider.state('organisation', {
-        parent: 'site',
         url: '/organisation',
         views: {
             'content@': {

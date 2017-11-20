@@ -1,10 +1,30 @@
 <ol>
     <li>
-        {{vm.hierarchy.name}}
+        {{vm.hierarchy.hierarchy.name}}
         <ol>
-            <li ng-repeat="child in vm.hierarchy.children">
+            <li ng-repeat="child in vm.hierarchy.hierarchy.children">
                 <a ng-click="vm.viewOrganisation(child)">{{child.name}} <md-icon ng-if="child.hasChildren">chevron_right</md-icon></a>
             </li>
         </ol>
     </li>
 </ol>
+
+<!-- <div
+data-angular-treeview="true"
+data-tree-id="abc"
+data-tree-model="treedata"
+data-node-id="id"
+data-node-label="label"
+data-node-children="children" >
+</div> -->
+
+<div
+data-angular-treeview="true"
+data-tree-id="testTree"
+data-tree-model="vm.hierarchy"
+data-node-id="uuid"
+data-node-label="name"
+data-node-children="children" >
+</div>
+
+<!-- {{vm.hierarchy}} -->

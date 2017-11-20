@@ -52,18 +52,7 @@ function config($mdThemingProvider, $stateProvider, $urlRouterProvider) {
     $urlRouterProvider
         .otherwise('/');
 
-    $stateProvider.state('site', {
-        abstract: true,
-        resolve: {},
-        views: {
-            'footer@': {
-                templateUrl: 'app/src/footer/view/footer.html',
-                controller: 'FooterController'
-            }
-        }
-    })
-    .state('dashboard', {
-        parent: 'site',
+    $stateProvider.state('dashboard', {
         url: '/',
         views: {
             'content@': {
@@ -72,33 +61,12 @@ function config($mdThemingProvider, $stateProvider, $urlRouterProvider) {
         },
         data: {}
     })
-    
-    .state('employee', {
-        parent: 'site',
-        url: '/medarbejdere',
-        views: {
-            'content@': {
-                templateUrl: 'app/src/employee/employee.view.html',
-                controller: 'EmployeeController',
-                controllerAs: 'vm'
-            }
-        }
-    }).state('timemachine', {
-        parent: 'site',
+    .state('timemachine', {
         url: '/tidsmaskine',
         views: {
             'content@': {
                 templateUrl: 'app/src/timemachine/timemachine.view.html',
             }
         }
-    }).state('search', {
-        parent: 'site',
-        url: '/search/:searchTerm',
-        views: {
-            'content@': {
-                templateUrl: 'app/src/search/view/search.html'
-            }
-        },
-        data: {}
     });
 }

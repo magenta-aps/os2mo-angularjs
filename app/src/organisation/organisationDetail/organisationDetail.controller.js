@@ -10,6 +10,7 @@ function OrganisationDetailController($scope, $state, $mdDialog, organisationSer
 
     vm.organisation = {};
     vm.show = show;
+    vm.currentNavItem = 'unit';
 
     activate();
 

@@ -1,4 +1,4 @@
 'use strict';
 
 angular
-.module('moApp.organisationTree', ['ngMaterial']);
+.module('moApp.organisationTree', ['ngMaterial','angularTreeview']);

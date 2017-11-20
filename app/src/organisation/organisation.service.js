@@ -37,8 +37,8 @@ function organisationService($http) {
 
     function getFullHierachy(org_uuid) {
        return  $http.get('/o/' + org_uuid + '/full-hierarchy').then(function(response) {
-            console.log(response.data.hierarchy);
-            return response.data.hierarchy;
+            console.log(response.data);
+            return response.data;
         });
     }
 
@@ -79,7 +79,7 @@ function organisationService($http) {
     }
 
     function validity(tense) {
-        return '?validity='+ tense + '&effective-date='
+        return '?validity='+ tense + '&effective-date=';
     }
 
 

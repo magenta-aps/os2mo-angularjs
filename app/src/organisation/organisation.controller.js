@@ -16,6 +16,14 @@ function OrganisationController($scope, $mdDialog, organisationService, sidebarT
         newOrganisationDialog();
     });
 
+    $scope.$on('move-organisation', function () {
+        moveOrganisationDialog();
+    });
+
+    $scope.$on('end-organisation', function () {
+        endOrganisationDialog();
+    });
+
     activate();
 
     function activate() {
@@ -42,7 +50,7 @@ function OrganisationController($scope, $mdDialog, organisationService, sidebarT
         sidebarToolsService.addTool(vm.toolbar, {
             icon: 'cancel',
             label: 'Afslut enhed',
-            broadcast: 'cancel-organisation'
+            broadcast: 'end-organisation'
         });
     }
 
@@ -50,6 +58,24 @@ function OrganisationController($scope, $mdDialog, organisationService, sidebarT
         $mdDialog.show({
             templateUrl: 'app/src/organisation/createOrganisation/createOrganisation.view.html',
             controller: 'CreateOrganisationController',
+            controllerAs: 'vm',
+            clickOutsideToClose: true
+        });
+    }
+
+    function moveOrganisationDialog() {
+        $mdDialog.show({
+            templateUrl: 'app/src/organisation/moveOrganisation/moveOrganisation.view.html',
+            controller: 'MoveOrganisationController',
+            controllerAs: 'vm',
+            clickOutsideToClose: true
+        });
+    }
+
+    function endOrganisationDialog() {
+        $mdDialog.show({
+            templateUrl: 'app/src/organisation/endOrganisation/endOrganisation.view.html',
+            controller: 'EndOrganisationController',
             controllerAs: 'vm',
             clickOutsideToClose: true
         });
