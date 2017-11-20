@@ -28,7 +28,9 @@ angular
         'moApp.log',
         'dcbImgFallback',
         /*DO NOT REMOVE MODULES PLACEHOLDER!!!*/ //openDesk-modules
-        /*LAST*/ 'moApp.translations'])// TRANSLATIONS IS ALWAYS LAST!
+        /*LAST*/
+        'moApp.translations'
+    ]) // TRANSLATIONS IS ALWAYS LAST!
     .config(config)
     .run(function ($rootScope, $state, $mdDialog, APP_CONFIG) {
         angular.element(window.document)[0].title = APP_CONFIG.appName;
@@ -43,7 +45,7 @@ angular
         });
     });
 
-function config($mdThemingProvider, $stateProvider, $urlRouterProvider, $locationProvider) {
+function config($mdThemingProvider, $stateProvider, $urlRouterProvider, $locationProvider, $mdDateLocaleProvider) {
     $mdThemingProvider.theme('default')
         .primaryPalette('green')
         .accentPalette('teal')
@@ -54,21 +56,42 @@ function config($mdThemingProvider, $stateProvider, $urlRouterProvider, $locatio
 
     $locationProvider.html5Mode(true);
 
+    $mdDateLocaleProvider.firstDayOfWeek = 1;
+
+    $mdDateLocaleProvider.formatDate = function (date) {
+        if (date == undefined)
+            return '';
+        var day = ('0' + date.getDate()).slice(-2);
+        var month = ('0' + (date.getMonth() + 1)).slice(-2);
+        var year = date.getFullYear();
+
+        return day + '/' + month + '/' + year;
+
+    };
+
     $stateProvider.state('dashboard', {
-        url: '/',
-        views: {
-            'content@': {
-                templateUrl: 'app/src/dashboard/view/dashboard.html',
+            url: '/',
+            views: {
+                'content@': {
+                    templateUrl: 'app/src/dashboard/view/dashboard.html',
+                }
+            },
+            data: {}
+        })
+        .state('timemachine', {
+            url: '/tidsmaskine',
+            views: {
+                'content@': {
+                    templateUrl: 'app/src/timemachine/timemachine.view.html',
+                }
             }
-        },
-        data: {}
-    })
-    .state('timemachine', {
-        url: '/tidsmaskine',
-        views: {
-            'content@': {
-                templateUrl: 'app/src/timemachine/timemachine.view.html',
+        })
+        .state('help', {
+            url: '/hjaelp',
+            views: {
+                'content@': {
+                    templateUrl: 'app/src/help/help.view.html',
+                }
             }
-        }
-    });
+        });
 }
