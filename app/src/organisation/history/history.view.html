@@ -22,13 +22,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>{{vm.history.date}}</td>
-                        <td>{{vm.history.section}}</td>
-                        <td>{{vm.history.action}}</td>
-                        <td>{{vm.history.object}}</td>
-                        <td>{{vm.history.from}}</td>
-                        <td>{{vm.history.changedBy}}</td>
+                    <tr ng-repeat="log in vm.history">
+                        <td>{{log.date}}</td>
+                        <td>{{log.section}}</td>
+                        <td>{{log.action}}</td>
+                        <td>{{log.object}}</td>
+                        <td>{{log.from}}</td>
+                        <td>{{log.changedBy}}</td>
                     </tr>
                 </tbody>
             </table>

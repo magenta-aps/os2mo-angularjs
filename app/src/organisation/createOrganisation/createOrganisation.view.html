@@ -1,5 +1,5 @@
 <md-dialog aria-label="Mango (Fruit)">
-    <form ng-cloak name="createOrganisationForm">
+    <form ng-cloak name="createOrganisationForm" ng-submit="vm.createOrgUnit()">
         <md-toolbar>
             <div class="md-toolbar-tools">
                 <h2>Opret ny enhed</h2>
@@ -12,20 +12,20 @@
 
         <md-dialog-content layout="column">
             <div layout="row">
-                <md-datepicker ng-model="ctrl.startDate" md-placeholder="{{'DATE.START_DATE' | translate}}"></md-datepicker>
-                <md-datepicker ng-model="ctrl.endDate" md-placeholder="{{'DATE.END_DATE' | translate}}"></md-datepicker>
+                <md-datepicker ng-model="vm.unit['valid-from']" md-placeholder="{{'DATE.START_DATE' | translate}}" ng-required="true"></md-datepicker>
+                <md-datepicker ng-model="vm.unit['valid-to']" md-placeholder="{{'DATE.END_DATE' | translate}}"></md-datepicker>
             </div>
             <div layout="row">
                 <md-input-container>
                     <label>{{'COMMON.NAME' | translate}}</label>
-                    <input ng-model="vm.organisation.name" type="text" required>
+                    <input ng-model="vm.unit.name" type="text" required>
                 </md-input-container>
 
                 <md-input-container>
                     <label>{{'ORGANISATION.UNIT_TYPE' | translate}}</label>
-                    <md-select ng-model="vm.organisation.type" required>
-                        <md-option ng-repeat="type in vm.orgTypes" value="{{state.label}}">
-                            {{type.label}}
+                    <md-select ng-model="vm.unit.type" required>
+                        <md-option ng-repeat="type in vm.orgUnitTypes" ng-value="{{type}}">
+                            {{type.name}}
                         </md-option>
                     </md-select>
                 </md-input-container>
@@ -33,14 +33,25 @@
 
             <md-input-container>
                 <label>{{'ORGANISATION.SUPER_UNIT' | translate}}</label>
-                <input ng-model="vm.organisation.parent" type="text" required>
+                <input ng-model="vm.unit.parent" type="text" required>
             </md-input-container>
 
             <div layout="row">
-                <md-input-container>
-                    <label>Find adresse</label>
-                    <input ng-model="vm.organisation.address" type="text" required>
-                </md-input-container>
+                <md-autocomplete
+                md-selected-item="vm.locations.location"
+                md-search-text="address"
+                md-items="item in vm.searchForAddress(address)"
+                md-item-text="item.vejnavn"
+                md-min-length="3"
+                md-floating-label="Find adresse"
+                required>
+              <md-item-template>
+                <span md-highlight-text="address" md-highlight-flags="^i">{{item.vejnavn}}</span>
+              </md-item-template>
+              <md-not-found>
+                No states matching "{{address}}" were found.
+              </md-not-found>
+            </md-autocomplete>
 
                 <md-checkbox ng-model="vm.organisation.search_country" aria-label="Checkbox 2" class="md-warn md-align-top-left" flex>
                     Søg i hele landet
@@ -48,7 +59,7 @@
 
                 <md-input-container>
                     <label>Lokationsnavn</label>
-                    <input ng-model="vm.organisation.location" type="text" required>
+                    <input ng-model="vm.locations.name" type="text" required>
                 </md-input-container>
             </div>
 
@@ -56,23 +67,23 @@
 
                 <md-input-container>
                     <label>Kontaktkanal</label>
-                    <md-select ng-model="vm.organisation.contact_channel" required>
-                        <md-option ng-repeat="type in vm.orgTypes" value="{{state.label}}">
-                            {{type.label}}
+                    <md-select ng-model="vm.channels.type" required>
+                        <md-option ng-repeat="type in vm.contactTypes" ng-value="{{type}}">
+                            {{type.name}}
                         </md-option>
                     </md-select>
                 </md-input-container>
 
                 <md-input-container>
                     <label>Telefon nr.</label>
-                    <input ng-model="vm.organisation.location" type="text" required>
+                    <input ng-model="vm.channels['contact-info']" type="text" required>
                 </md-input-container>
 
                 <md-input-container>
                     <label>Egenskaber</label>
-                    <md-select ng-model="vm.organisation.contact_channel" required>
-                        <md-option ng-repeat="type in vm.orgTypes" value="{{state.label}}">
-                            {{type.label}}
+                    <md-select ng-model="vm.channels.visibility" required>
+                        <md-option ng-repeat="type in vm.contactProperties" ng-value="{{type}}">
+                            {{type.name}}
                         </md-option>
                     </md-select>
                 </md-input-container>
@@ -81,7 +92,7 @@
         </md-dialog-content>
         <md-dialog-actions layout="row">
             <span flex></span>
-            <md-button class="md-icon-button" ng-disabled="createOrganisationForm.$invalid">
+            <md-button type="submit" class="md-icon-button" > <!-- ng-disabled="createOrganisationForm.$invalid" -->
                 <md-icon>done</md-icon>
             </md-button>
         </md-dialog-actions>

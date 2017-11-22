@@ -13,8 +13,8 @@
             <td>{{vm.organisation.unit.name}}</td>
             <td>{{vm.organisation.unit.type.name}}</td>
             <td>{{vm.organisation.unit['parent-object'].name}}</td>
-            <td>{{vm.organisation.unit['valid-from']}}</td>
-            <td>{{vm.organisation.unit['valid-to']}}</td>
+            <td>{{vm.formatDate(vm.organisation.unit['valid-from'])}}</td>
+            <td>{{vm.formatDate(vm.organisation.unit['valid-to'])}}</td>
         </tr>
     </tbody>
 </table>

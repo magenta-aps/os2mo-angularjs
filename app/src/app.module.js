@@ -66,7 +66,6 @@ function config($mdThemingProvider, $stateProvider, $urlRouterProvider, $locatio
         var year = date.getFullYear();
 
         return day + '/' + month + '/' + year;
-
     };
 
     $stateProvider.state('dashboard', {

@@ -12,12 +12,12 @@
     
             <md-dialog-content layout="column">
                 <div layout="row">
-                    <md-datepicker ng-model="ctrl.startDate" md-placeholder="Dato for flytning"></md-datepicker>
+                    <md-datepicker ng-model="vm.move.date" md-placeholder="Dato for flytning"></md-datepicker>
                 </div>
                 <div layout="row">
                     <md-input-container>
                         <label>Ny overenhed</label>
-                        <md-select ng-model="vm.organisation.type" required>
+                        <md-select ng-model="vm.move.parent" required>
                             <md-option ng-repeat="type in vm.orgTypes" value="{{state.label}}">
                                 {{type.label}}
                             </md-option>

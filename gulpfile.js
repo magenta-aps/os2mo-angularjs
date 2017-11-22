@@ -50,6 +50,18 @@ function createWebserver(config) {
                     source: '/e',
                     target: config.repo + '/e',
                 },
+                {
+                    source: '/org-unit',
+                    target: config.repo + '/org-unit',
+                },
+                {
+                    source: '/role-types',
+                    target: config.repo + '/role-types',
+                },
+                {
+                    source: '/addressws',
+                    target: config.repo + '/addressws',
+                }
             ]
         }));
 }

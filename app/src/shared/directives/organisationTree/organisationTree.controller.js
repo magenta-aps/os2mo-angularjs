@@ -11,12 +11,12 @@ function OrganisationTreeController($scope, $state, organisationService) {
     vm.getLink = getLink;
     vm.viewOrganisation = viewOrganisation;
 
-    $scope.$watch("orgUuid", function(newVal) {
+    $scope.$on('refresh-org-tree', function() {
       getFullHierarchy();
     });
 
-    $scope.$watch('testTree', function(newVal) {
-      console.log('tree updated');
+    $scope.$watch("orgUuid", function(newVal) {
+      getFullHierarchy();
     });
 
     $scope.treedata = 

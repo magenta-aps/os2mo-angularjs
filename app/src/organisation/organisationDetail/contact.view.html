@@ -10,13 +10,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>{{vm.organisation.contact.type.name}}</td>
-            <td>{{vm.organisation.contact['contact-info']}}</td>
-            <td>{{vm.organisation.contact.visibility.name}}</td>
-            <td>{{vm.organisation.contact.location.name}}</td>
-            <td>{{vm.organisation.contact['valid-from']}}</td>
-            <td>{{vm.organisation.contact['valid-to']}}</td>
+        <tr ng-repeat="contact in vm.organisation.contact">
+            <td>{{contact.type.name}}</td>
+            <td>{{contact['contact-info']}}</td>
+            <td>{{contact.visibility.name}}</td>
+            <td>{{contact.location.name}}</td>
+            <td>{{vm.formatDate(contact['valid-from'])}}</td>
+            <td>{{vm.formatDate(contact['valid-to'])}}</td>
         </tr>
     </tbody>
 </table>

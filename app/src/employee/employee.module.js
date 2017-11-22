@@ -13,5 +13,5 @@ function config($stateProvider) {
                 controllerAs: 'vm'
             }
         }
-    })
+    });
 }

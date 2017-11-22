@@ -12,6 +12,11 @@ function OrganisationDetailController($scope, $rootScope, $state, $mdDialog, org
     vm.show = show;
     vm.showHistory = showHistory;
     vm.currentNavItem = 'unit';
+    vm.formatDate = formatDate;
+
+    $scope.$on('refresh-org-unit-detail', function() {
+        activate();
+    });
 
     activate();
 
@@ -25,9 +30,13 @@ function OrganisationDetailController($scope, $rootScope, $state, $mdDialog, org
         });
 
         organisationService.getContactDetails(org.org, org.uuid).then(function(response) {
-            console.log(response);
             vm.organisation.contact = response;
         });
+    }
+
+    function formatDate(date) {
+        var d = moment(date).format('DD-MM-YYYY');
+        return d != 'Invalid date' ? d : '';
     }
 
     function show(detail) {
@@ -35,7 +44,6 @@ function OrganisationDetailController($scope, $rootScope, $state, $mdDialog, org
     }
 
     function showHistory() {
-        console.log('history');
         $rootScope.$broadcast('show-history');
     }
 }

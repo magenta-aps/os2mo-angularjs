@@ -52,7 +52,7 @@ function OrganisationController($scope, $mdDialog, organisationService, sidebarT
             broadcast: 'move-organisation'
         });
         sidebarToolsService.addTool(vm.toolbar, {
-            icon: 'cancel',
+            icon: 'delete',
             label: 'Afslut enhed',
             broadcast: 'end-organisation'
         });
